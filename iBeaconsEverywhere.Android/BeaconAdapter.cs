@@ -21,10 +21,10 @@ namespace iBeaconsEverywhereAndroid
 		private readonly Activity m_Context;
 		public List<Beacon> Beacons {get;set;}
 
-		public BeaconAdapter(Activity context, List<Beacon> beacons)
+		public BeaconAdapter(Activity context)
 		{
 			m_Context = context;
-			this.Beacons = beacons;
+			this.Beacons = new List<Beacon>();
 		}
 
 		public override View GetView(int position, View convertView, ViewGroup parent)

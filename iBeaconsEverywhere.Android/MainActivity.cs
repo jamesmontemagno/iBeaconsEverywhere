@@ -26,8 +26,14 @@ namespace iBeaconsEverywhereAndroid
 			base.OnCreate (bundle);
 
 			SetContentView (Resource.Layout.Main);
+
+			ListAdapter = new BeaconAdapter (this);
+
+			//create a new beacon manager to handle starting and stopping ranging
 			beaconManager = new BeaconManager (this);
 
+
+			//Validation checks
 			if (!beaconManager.HasBluetooth) {
 				//no bluetooth :(
 				DisplayMessage ("No bluetooth on your device.", ":(");
@@ -47,7 +53,7 @@ namespace iBeaconsEverywhereAndroid
 			beaconRegion = new Region (beaconId, uuid, major, null);
 
 
-
+			//Event for when ranging happens
 			beaconManager.Ranging += (object sender, BeaconManager.RangingEventArgs e) => {
 
 				RunOnUiThread(()=>{
@@ -57,7 +63,10 @@ namespace iBeaconsEverywhereAndroid
 				});
 			};
 
+			//estimote loggin, optional
+			#if DEBUG
 			EstimoteSdk.Utility.L.EnableDebugLogging (true);
+			#endif
 		}
 			
 		public void OnServiceReady()
@@ -75,12 +84,14 @@ namespace iBeaconsEverywhereAndroid
 
 		protected override void OnPause ()
 		{
+			// Make sure we disconnect on pause.
 			base.OnPause ();
 			beaconManager.Disconnect ();
 		}
 
 		protected override void OnResume()
 		{
+			//on resume and come back reconnect to manager
 			base.OnResume();
 			beaconManager.Connect(this);
 		}
