@@ -8,7 +8,7 @@ using Android.Content;
 
 namespace iBeaconsEverywhereAndroid
 {
-	[Activity (Label = "iBeaconsEverywhere", MainLauncher = true)]
+	[Activity (Label = "iBeacons Everywhere", MainLauncher = true)]
 	public class MainActivity : ListActivity, BeaconManager.IServiceReadyCallback
 	{
 		private List<Beacon> beacons = new List<Beacon> ();
@@ -20,7 +20,7 @@ namespace iBeaconsEverywhereAndroid
 
 		const string beaconId ="com.refractored";
 		const string uuid = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
-
+		private bool beaconsEnabled = true;
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -37,16 +37,15 @@ namespace iBeaconsEverywhereAndroid
 			if (!beaconManager.HasBluetooth) {
 				//no bluetooth :(
 				DisplayMessage ("No bluetooth on your device.", ":(");
-			}
-
-			if (!beaconManager.IsBluetoothEnabled) {
-				//not enabled
+				beaconsEnabled = false;
+			} else if (!beaconManager.IsBluetoothEnabled) {
+				//bluetooth is not enabled
 				DisplayMessage ("Please turn on bluetooth.", ":(");
-			}
-
-			if (!beaconManager.CheckPermissionsAndService ()) {
+				beaconsEnabled = false;
+			} else if (!beaconManager.CheckPermissionsAndService ()) {
 				//issues with permissions and service
 				DisplayMessage ("Issues with service and persmissions.", ":(");
+				beaconsEnabled = false;
 			}
 
 			//major and minor are optional, pass in null if you don't need them
@@ -79,6 +78,7 @@ namespace iBeaconsEverywhereAndroid
 		{
 			// Make sure we disconnect from the Estimote.
 			base.OnDestroy();
+
 			beaconManager.Disconnect();
 		}
 
@@ -93,7 +93,8 @@ namespace iBeaconsEverywhereAndroid
 		{
 			//on resume and come back reconnect to manager
 			base.OnResume();
-			beaconManager.Connect(this);
+			if(beaconsEnabled)
+				beaconManager.Connect(this);
 		}
 
 		protected override void OnListItemClick (ListView l, View v, int position, long id)
