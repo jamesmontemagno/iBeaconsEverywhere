@@ -22,15 +22,15 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_distance.png" id="TNp-9L-Lx9">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Images/bg_distance.png" id="TNp-9L-Lx9">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="239"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beacon_blueberry.png" id="ima-Ni-X8G">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Images/beacon_blueberry.png" id="ima-Ni-X8G">
                     <rect key="frame" x="216" y="308" width="104" height="158"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot.png" id="bwL-dn-06o">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Images/dot.png" id="bwL-dn-06o">
                     <rect key="frame" x="155" y="90" width="10" height="10"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -75,8 +75,8 @@
         </view>
     </objects>
     <resources>
-        <image name="beacon_blueberry.png" width="170" height="256"/>
-        <image name="bg_distance.png" width="1392" height="1110"/>
-        <image name="dot.png" width="20" height="20"/>
+        <image name="Images/beacon_blueberry.png" width="1392" height="1110"/>
+        <image name="Images/bg_distance.png" width="1392" height="1110"/>
+        <image name="Images/dot.png" width="1392" height="1110"/>
     </resources>
 </document>

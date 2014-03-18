@@ -38,11 +38,11 @@ namespace iBeaconsEverywhere.iOS
 			if (!IsViewLoaded || beacon == null)
 				return;
 
-			LabelAccuracy.Text = beacon.Accuracy.ToString ("P");
-			LabelMajor.Text = beacon.Major.ToString ();
-			LabelMinor.Text = beacon.Minor.ToString ();
-			LabelRSSI.Text = beacon.Rssi.ToString ();
-			LabelUUID.Text = beacon.ProximityUuid.AsString ();
+			LabelAccuracy.Text = "Accuracy: " + beacon.Accuracy.ToString ("P");
+			LabelMajor.Text = "Major: " + beacon.Major.ToString ();
+			LabelMinor.Text = "Minor: " + beacon.Minor.ToString ();
+			LabelRSSI.Text = "RSSI: " + beacon.Rssi.ToString ();
+			LabelUUID.Text = "UUID: " + beacon.ProximityUuid.AsString ();
 
 			//switch image for correct beacon color (example only since I know the minors)
 			switch (beacon.Minor.ToString ()) {

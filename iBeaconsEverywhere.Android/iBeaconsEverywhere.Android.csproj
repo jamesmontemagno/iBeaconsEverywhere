@@ -29,6 +29,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <AndroidSupportedAbis>armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
+    <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -54,6 +55,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DetailsActivity.cs" />
+    <Compile Include="BeaconAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -63,16 +65,46 @@
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
-    <AndroidResource Include="Resources\drawable\Icon.png" />
     <AndroidResource Include="Resources\layout\Details.axml" />
     <AndroidResource Include="Resources\values\Styles.xml" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_square_far.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_square_far.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_square_far.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_square_far.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_square_immediate.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_square_immediate.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_square_immediate.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_square_immediate.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_square_unknown.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_square_unknown.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_square_unknown.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_square_unknown.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_square_near.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_square_near.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_square_near.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_square_near.png" />
+    <AndroidResource Include="Resources\drawable\bg_distance.png" />
+    <AndroidResource Include="Resources\drawable\dot.png" />
+    <AndroidResource Include="Resources\drawable\beacon_blueberry.png" />
+    <AndroidResource Include="Resources\drawable\beacon_gray.png" />
+    <AndroidResource Include="Resources\drawable\beacon_icy.png" />
+    <AndroidResource Include="Resources\layout\ItemBeacon.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
     <XamarinComponentReference Include="estimotesdk">
-      <InstallationInProgress>True</InstallationInProgress>
       <Version>1.0.20140310</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable-mdpi\" />
+    <Folder Include="Resources\drawable-xhdpi\" />
+    <Folder Include="Resources\drawable-xxhdpi\" />
+    <Folder Include="Resources\drawable-hdpi\" />
   </ItemGroup>
 </Project>

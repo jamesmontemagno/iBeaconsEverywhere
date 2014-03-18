@@ -1,8 +1,107 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-</LinearLayout>
-
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bg_distance"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:maxHeight="250dp" />
+            <ImageView
+                android:id="@+id/dot_immediate"
+                android:layout_width="fill_parent"
+                android:layout_height="5dp"
+                android:src="@drawable/dot"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="70dp"
+                android:visibility="invisible" />
+            <ImageView
+                android:id="@+id/dot_near"
+                android:layout_width="fill_parent"
+                android:layout_height="5dp"
+                android:src="@drawable/dot"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="100dp"
+                android:visibility="invisible" />
+            <ImageView
+                android:id="@+id/dot_far"
+                android:layout_width="fill_parent"
+                android:layout_height="5dp"
+                android:src="@drawable/dot"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="160dp"
+                android:visibility="invisible" />
+            <ImageView
+                android:id="@+id/dot_unknown"
+                android:layout_width="fill_parent"
+                android:layout_height="5dp"
+                android:src="@drawable/dot"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="220dp"
+                android:visibility="invisible" />
+        </FrameLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/linearLayout1">
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/linearLayout2"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="fill_parent"
+                android:padding="8dp">
+                <TextView
+                    android:text="UUID: "
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/uuid" />
+                <TextView
+                    android:text="Major: "
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/major" />
+                <TextView
+                    android:text="Minor: "
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/minor" />
+                <TextView
+                    android:text="Accuracy: "
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/accuracy" />
+                <TextView
+                    android:text="RSSI: "
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rssi" />
+            </LinearLayout>
+            <ImageView
+                android:src="@drawable/beacon_blueberry"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="fill_parent"
+                android:id="@+id/image_beacon"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
