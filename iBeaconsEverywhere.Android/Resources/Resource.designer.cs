@@ -120,6 +120,12 @@ namespace iBeaconsEverywhereAndroid
 			// aapt resource value: 0x7f060008
 			public const int minor = 2131099656;
 			
+			// aapt resource value: 0x7f060010
+			public const int no_beacons = 2131099664;
+			
+			// aapt resource value: 0x7f06000f
+			public const int progressBar = 2131099663;
+			
 			// aapt resource value: 0x7f06000a
 			public const int rssi = 2131099658;
 			

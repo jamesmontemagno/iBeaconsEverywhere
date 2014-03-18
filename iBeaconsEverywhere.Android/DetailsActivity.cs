@@ -23,7 +23,7 @@ namespace iBeaconsEverywhereAndroid
 			var major = Intent.GetStringExtra ("major");
 			var minor = Intent.GetStringExtra ("minor");
 			var rssi = Intent.GetStringExtra ("rssi");
-			var proximity = (EstimoteSdk.Utils.Proximity)Intent.GetIntExtra ("proximity", 0);
+			var proximity = EstimoteSdk.Utils.Proximity.ValueOf(Intent.GetStringExtra ("proximity"));
 
 			FindViewById<TextView> (Resource.Id.uuid).Text += uuid;
 			FindViewById<TextView> (Resource.Id.accuracy).Text += accuracy;

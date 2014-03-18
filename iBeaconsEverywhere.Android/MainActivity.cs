@@ -11,11 +11,15 @@ namespace iBeaconsEverywhereAndroid
 	[Activity (Label = "iBeacons Everywhere", MainLauncher = true)]
 	public class MainActivity : ListActivity, BeaconManager.IServiceReadyCallback
 	{
-		private List<Beacon> beacons = new List<Beacon> ();
+		//UI stuff
+		private ProgressBar progressBar;
+		private TextView noBeacons;
+
 		private Region beaconRegion;
 		private BeaconManager beaconManager;
 
-		private readonly Java.Lang.Integer major = new Java.Lang.Integer(275);
+
+		private readonly Java.Lang.Integer major = new Java.Lang.Integer(2755);
 		private readonly Java.Lang.Integer minor = new Java.Lang.Integer(1);
 
 		const string beaconId ="com.refractored";
@@ -26,6 +30,8 @@ namespace iBeaconsEverywhereAndroid
 			base.OnCreate (bundle);
 
 			SetContentView (Resource.Layout.Main);
+			progressBar = FindViewById<ProgressBar> (Resource.Id.progressBar);
+			noBeacons = FindViewById<TextView> (Resource.Id.no_beacons);
 
 			ListAdapter = new BeaconAdapter (this);
 
@@ -53,14 +59,22 @@ namespace iBeaconsEverywhereAndroid
 
 
 			//Event for when ranging happens
-			beaconManager.Ranging += (object sender, BeaconManager.RangingEventArgs e) => {
+			beaconManager.Ranging += (object sender, BeaconManager.RangingEventArgs e) => RunOnUiThread (() => {
 
-				RunOnUiThread(()=>{
-					((BeaconAdapter)ListAdapter).Beacons.Clear();
-					((BeaconAdapter)ListAdapter).Beacons.AddRange(e.Beacons);
-					((BeaconAdapter)ListAdapter).NotifyDataSetChanged();
-				});
-			};
+				if (e.Beacons.Count == 0)
+					noBeacons.Visibility = ViewStates.Visible;
+				else if(noBeacons.Visibility == ViewStates.Visible)
+					noBeacons.Visibility = ViewStates.Gone;
+
+				if (progressBar.Visibility == ViewStates.Visible)
+					progressBar.Visibility = ViewStates.Invisible;
+
+				((BeaconAdapter)ListAdapter).Beacons.Clear ();
+				((BeaconAdapter)ListAdapter).Beacons.AddRange (e.Beacons);
+				((BeaconAdapter)ListAdapter).NotifyDataSetChanged ();
+
+			});
+
 
 			//estimote loggin, optional
 			#if DEBUG
@@ -71,7 +85,10 @@ namespace iBeaconsEverywhereAndroid
 		public void OnServiceReady()
 		{
 			// This method is called when BeaconManager is up and running.
+
 			beaconManager.StartRanging (beaconRegion);
+
+			RunOnUiThread (() => progressBar.Visibility = ViewStates.Visible);
 		}
 
 		protected override void OnDestroy()
@@ -109,7 +126,7 @@ namespace iBeaconsEverywhereAndroid
 			intent.PutExtra ("accuracy", Utils.ComputeAccuracy (beacon).ToString ("P"));
 			intent.PutExtra ("major", beacon.Major.ToString ());
 			intent.PutExtra ("minor", beacon.Minor.ToString ());
-			intent.PutExtra ("proximity", (int)Utils.ComputeProximity(beacon));
+			intent.PutExtra ("proximity", Utils.ComputeProximity(beacon).ToString());
 			StartActivity (intent);
 
 		}
