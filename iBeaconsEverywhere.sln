@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBeaconsEverywhere.iOS", "iBeaconsEverywhere.iOS\iBeaconsEverywhere.iOS.csproj", "{66E1563E-303E-4A1D-B999-47F6EA71D816}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBeaconsEverywhere.Android", "iBeaconsEverywhere.Android\iBeaconsEverywhere.Android.csproj", "{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -25,6 +27,18 @@ Global
 		{66E1563E-303E-4A1D-B999-47F6EA71D816}.Release|iPhone.Build.0 = Release|iPhone
 		{66E1563E-303E-4A1D-B999-47F6EA71D816}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{66E1563E-303E-4A1D-B999-47F6EA71D816}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.Release|iPhone.Build.0 = Release|Any CPU
+		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = iBeaconsEverywhere.iOS\iBeaconsEverywhere.iOS.csproj

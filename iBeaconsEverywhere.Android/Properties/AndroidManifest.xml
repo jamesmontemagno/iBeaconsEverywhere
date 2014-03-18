@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.refractored.ibeaconseverywhere">
+	<uses-sdk android:targetSdkVersion="19" />
+	<application android:theme="@style/MyBaseTheme" android:label="iBeacons Everywhere" android:icon="@drawable/icon">
+	</application>
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+</manifest>

@@ -13,7 +13,7 @@ namespace iBeaconsEverywhere.iOS
 
 		public MasterViewController () : base ("MasterViewController", null)
 		{
-			Title = NSBundle.MainBundle.LocalizedString ("Master", "Master");
+			Title = NSBundle.MainBundle.LocalizedString ("Master", "iBeacons Everywhere");
 
 			// Custom initialization
 		}
@@ -31,11 +31,16 @@ namespace iBeaconsEverywhere.iOS
 		const ushort beaconMinor = 1;
 		const string beaconId ="com.refractored";
 		const string uuid = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
-
+		public UIImage Near, Far, Immediate, Unknown;
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+			Near = UIImage.FromBundle ("Images/square_near");
+			Far = UIImage.FromBundle ("Images/square_far");
+			Immediate = UIImage.FromBundle ("Images/square_immediate");
+			Unknown = UIImage.FromBundle ("Images/square_unknown");
 
 			beaconUUID = new NSUuid (uuid);
 			beaconRegion = new CLBeaconRegion (beaconUUID, beaconMajor, beaconId);
@@ -116,19 +121,19 @@ namespace iBeaconsEverywhere.iOS
 				switch (beacon.Proximity) {
 				case CLProximity.Immediate:
 					message = "Immediate";
-					cell.BackgroundColor = UIColor.Green;
+					cell.ImageView.Image = controller.Immediate;
 					break;
 				case CLProximity.Near:
 					message = "Near";
-					cell.BackgroundColor = UIColor.Yellow;
+					cell.ImageView.Image = controller.Near;
 					break;
 				case CLProximity.Far:
 					message = "Far";
-					cell.BackgroundColor = UIColor.Blue;
+					cell.ImageView.Image = controller.Far;
 					break;
 				case CLProximity.Unknown:
 					message = "?";
-					cell.BackgroundColor = UIColor.Gray;
+					cell.ImageView.Image = controller.Unknown;
 					break;
 				}
 
@@ -150,6 +155,19 @@ namespace iBeaconsEverywhere.iOS
 				// Pass the selected object to the new view controller.
 				controller.NavigationController.PushViewController (controller.DetailViewController, true);
 			}
+		}
+
+		public override void DidReceiveMemoryWarning ()
+		{
+			base.DidReceiveMemoryWarning ();
+			Unknown.Dispose ();
+			Unknown = null;
+			Near.Dispose ();
+			Near = null;
+			Far.Dispose ();
+			Far = null;
+			Immediate.Dispose ();
+			Immediate = null;
 		}
 	}
 }

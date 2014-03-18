@@ -1,6 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Collections.Generic;
+﻿using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreLocation;
@@ -9,7 +7,7 @@ namespace iBeaconsEverywhere.iOS
 {
 	public partial class DetailViewController : UIViewController
 	{
-
+		private UIImage blueberry, icy, gray;
 		public DetailViewController () : base ("DetailViewController", null)
 		{
 			Title = NSBundle.MainBundle.LocalizedString ("Detail", "Detail");
@@ -49,13 +47,13 @@ namespace iBeaconsEverywhere.iOS
 			//switch image for correct beacon color (example only since I know the minors)
 			switch (beacon.Minor.ToString ()) {
 			case "1":
-				ImageViewEstimote.Image = UIImage.FromBundle ("beacon_blueberry");
+				ImageViewEstimote.Image = blueberry;
 				break;
 			case "2":
-				ImageViewEstimote.Image = UIImage.FromBundle ("beacon_icy");
+				ImageViewEstimote.Image = icy;
 				break;
 			case "3":
-				ImageViewEstimote.Image = UIImage.FromBundle ("beacon_gray");
+				ImageViewEstimote.Image = gray;
 				break;
 			}
 
@@ -82,6 +80,10 @@ namespace iBeaconsEverywhere.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+			blueberry = UIImage.FromBundle ("Images/beacon_blueberry");
+			icy = UIImage.FromBundle ("Images/beacon_icy");
+			gray = UIImage.FromBundle ("Images/beacon_gray");
 			
 			// Perform any additional setup after loading the view, typically from a nib.
 			ConfigureView ();

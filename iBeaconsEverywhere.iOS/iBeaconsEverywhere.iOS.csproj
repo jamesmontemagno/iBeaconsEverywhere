@@ -99,11 +99,19 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
-    <BundleResource Include="beacon_blueberry.png" />
-    <BundleResource Include="beacon_gray.png" />
-    <BundleResource Include="beacon_icy.png" />
-    <BundleResource Include="bg_distance.png" />
-    <BundleResource Include="dot.png" />
+    <BundleResource Include="Images\square_unknown.png" />
+    <BundleResource Include="Images\square_unknown%402x.png" />
+    <BundleResource Include="Images\square_immediate.png" />
+    <BundleResource Include="Images\square_immediate%402x.png" />
+    <BundleResource Include="Images\square_near.png" />
+    <BundleResource Include="Images\square_near%402x.png" />
+    <BundleResource Include="Images\square_far.png" />
+    <BundleResource Include="Images\square_far%402x.png" />
+    <BundleResource Include="Images\beacon_icy.png" />
+    <BundleResource Include="Images\beacon_gray.png" />
+    <BundleResource Include="Images\bg_distance.png" />
+    <BundleResource Include="Images\beacon_blueberry.png" />
+    <BundleResource Include="Images\dot.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -126,4 +134,7 @@
     <InterfaceDefinition Include="DetailViewController.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
 </Project>
