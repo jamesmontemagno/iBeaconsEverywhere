@@ -81,6 +81,8 @@ namespace iBeaconsEverywhere.iOS
 		{
 			base.ViewDidLoad ();
 
+			EdgesForExtendedLayout = UIRectEdge.None;
+
 			blueberry = UIImage.FromBundle ("Images/beacon_blueberry");
 			icy = UIImage.FromBundle ("Images/beacon_icy");
 			gray = UIImage.FromBundle ("Images/beacon_gray");

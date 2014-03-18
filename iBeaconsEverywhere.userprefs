@@ -1,42 +1,21 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iBeaconsEverywhere.Android/MainActivity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.James's iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iBeaconsEverywhere.iOS/DetailViewController.cs">
     <Files>
-      <File FileName="iBeaconsEverywhere.iOS/DetailViewController.cs" Line="45" Column="26" />
-      <File FileName="iBeaconsEverywhere.Android/DetailsActivity.cs" Line="39" Column="4" />
+      <File FileName="iBeaconsEverywhere.iOS/DetailViewController.cs" Line="84" Column="45" />
+      <File FileName="iBeaconsEverywhere.Android/DetailsActivity.cs" Line="1" Column="1" />
       <File FileName="iBeaconsEverywhere.Android/Resources/Resource.designer.cs" Line="1" Column="1" />
-      <File FileName="iBeaconsEverywhere.Android/MainActivity.cs" Line="11" Column="31" />
-      <File FileName="iBeaconsEverywhere.iOS/MasterViewController.cs" Line="125" Column="12" />
-      <File FileName="iBeaconsEverywhere.Android/BeaconAdapter.cs" Line="27" Column="37" />
+      <File FileName="iBeaconsEverywhere.Android/MainActivity.cs" Line="88" Column="4" />
+      <File FileName="iBeaconsEverywhere.iOS/MasterViewController.cs" Line="1" Column="1" />
+      <File FileName="iBeaconsEverywhere.Android/BeaconAdapter.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="iBeaconsEverywhere.Android" expanded="True" selected="True">
-            <Node name="ComponentReferenceFolder" expanded="True" />
-            <Node name="Assets" expanded="True" />
-            <Node name="Properties" expanded="True" />
-            <Node name="Resources" expanded="True">
-              <Node name="drawable-hdpi" expanded="True" />
-              <Node name="layout" expanded="True" />
-            </Node>
-          </Node>
-          <Node name="iBeaconsEverywhere.iOS" expanded="True">
-            <Node name="Images" expanded="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/iBeaconsEverywhere/iBeaconsEverywhere.Android/MainActivity.cs" line="28" column="1" />
-      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/iBeaconsEverywhere/iBeaconsEverywhere.Android/MainActivity.cs" line="74" column="1" />
-      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/iBeaconsEverywhere/iBeaconsEverywhere.Android/MainActivity.cs" line="82" column="1" />
-      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/iBeaconsEverywhere/iBeaconsEverywhere.Android/MainActivity.cs" line="89" column="1" />
-      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/iBeaconsEverywhere/iBeaconsEverywhere.Android/MainActivity.cs" line="97" column="1" />
+      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/iBeaconsEverywhere/iBeaconsEverywhere.iOS/DetailViewController.cs" line="63" column="1" />
+      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/iBeaconsEverywhere/iBeaconsEverywhere.iOS/DetailViewController.cs" line="76" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.iBeaconsEverywhere.Android MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" MonoForAntroid.PreferredTheme="Theme.Holo.Light.DarkActionBar" AndroidDeviceId-Debug="emulator-5554" />
+  <MonoDevelop.Ide.ItemProperties.iBeaconsEverywhere.Android MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" MonoForAntroid.PreferredTheme="Theme.Holo.Light.DarkActionBar" AndroidDeviceId-Debug="T062005D5Z" />
 </Properties>
