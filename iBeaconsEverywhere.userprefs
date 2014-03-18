@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina.7.1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iBeaconsEverywhere.iOS/DetailViewController.cs">
+    <Files>
+      <File FileName="iBeaconsEverywhere.iOS/MasterViewController.cs" Line="41" Column="62" />
+      <File FileName="iBeaconsEverywhere.iOS/DetailViewController.cs" Line="80" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
