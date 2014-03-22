@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.James's iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iBeaconsEverywhere.iOS/DetailViewController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina.7.1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iBeaconsEverywhere.iOS/MasterViewController.cs">
     <Files>
-      <File FileName="iBeaconsEverywhere.iOS/DetailViewController.cs" Line="84" Column="45" />
+      <File FileName="iBeaconsEverywhere.iOS/DetailViewController.cs" Line="1" Column="1" />
       <File FileName="iBeaconsEverywhere.Android/DetailsActivity.cs" Line="1" Column="1" />
       <File FileName="iBeaconsEverywhere.Android/Resources/Resource.designer.cs" Line="1" Column="1" />
-      <File FileName="iBeaconsEverywhere.Android/MainActivity.cs" Line="88" Column="4" />
-      <File FileName="iBeaconsEverywhere.iOS/MasterViewController.cs" Line="1" Column="1" />
+      <File FileName="iBeaconsEverywhere.Android/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="iBeaconsEverywhere.iOS/MasterViewController.cs" Line="17" Column="4" />
       <File FileName="iBeaconsEverywhere.Android/BeaconAdapter.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
@@ -14,6 +14,7 @@
     <BreakpointStore>
       <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/iBeaconsEverywhere/iBeaconsEverywhere.iOS/DetailViewController.cs" line="63" column="1" />
       <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/iBeaconsEverywhere/iBeaconsEverywhere.iOS/DetailViewController.cs" line="76" column="1" />
+      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/iBeaconsEverywhere/iBeaconsEverywhere.Portable/TwilioService.cs" line="31" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

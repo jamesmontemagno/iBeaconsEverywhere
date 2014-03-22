@@ -15,7 +15,6 @@ namespace iBeaconsEverywhere.iOS
 		{
 			Title = NSBundle.MainBundle.LocalizedString ("Master", "iBeacons Everywhere");
 
-			// Custom initialization
 		}
 
 		public DetailViewController DetailViewController {

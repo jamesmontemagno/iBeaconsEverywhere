@@ -38,6 +38,10 @@ namespace iBeaconsEverywhereAndroid
 			//create a new beacon manager to handle starting and stopping ranging
 			beaconManager = new BeaconManager (this);
 
+			//manually check for BLE
+			if (PackageManager.HasSystemFeature(PackageManager.FeatureBluetoothLe)) {
+				Toast.MakeText(this, "BLE not supported", ToastLength.Short).Show();
+			}
 
 			//Validation checks
 			if (!beaconManager.HasBluetooth) {

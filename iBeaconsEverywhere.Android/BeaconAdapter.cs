@@ -9,7 +9,7 @@ using EstimoteSdk;
 
 namespace iBeaconsEverywhereAndroid
 {
-	internal class MonkeyAdapterWrapper : Java.Lang.Object
+	internal class BeaconAdapterWrapper : Java.Lang.Object
 	{
 		public TextView Title { get; set; }
 		public TextView SubTitle { get; set; }
@@ -40,10 +40,10 @@ namespace iBeaconsEverywhereAndroid
 			if (view == null)
 				return null;
 
-			var wrapper = view.Tag as MonkeyAdapterWrapper;
+			var wrapper = view.Tag as BeaconAdapterWrapper;
 			if (wrapper == null)
 			{
-				wrapper = new MonkeyAdapterWrapper
+				wrapper = new BeaconAdapterWrapper
 				{
 					Title = view.FindViewById<TextView>(Resource.Id.title),
 					SubTitle = view.FindViewById<TextView>(Resource.Id.subtitle),

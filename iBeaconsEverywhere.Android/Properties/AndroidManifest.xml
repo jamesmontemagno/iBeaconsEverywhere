@@ -6,4 +6,6 @@
 	</application>
 	<uses-permission android:name="android.permission.BLUETOOTH" />
 	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
 </manifest>
