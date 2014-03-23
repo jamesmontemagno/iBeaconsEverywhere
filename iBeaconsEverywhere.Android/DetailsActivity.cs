@@ -19,9 +19,11 @@ namespace iBeaconsEverywhereAndroid
 			base.OnCreate (bundle);
 			SetContentView (Resource.Layout.Details);
 			var uuid = Intent.GetStringExtra ("uuid");
+			//Estimated distance between device and beacon
 			var accuracy = Intent.GetStringExtra ("accuracy");
 			var major = Intent.GetStringExtra ("major");
 			var minor = Intent.GetStringExtra ("minor");
+			//The measured signal strength of the Bluetooth packet that led do this iBeacon detection. (decibels)
 			var rssi = Intent.GetStringExtra ("rssi");
 			var proximity = EstimoteSdk.Utils.Proximity.ValueOf(Intent.GetStringExtra ("proximity"));
 

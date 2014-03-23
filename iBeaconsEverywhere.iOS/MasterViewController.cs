@@ -25,12 +25,14 @@ namespace iBeaconsEverywhere.iOS
 
 		CLLocationManager locationmanager;
 		NSUuid beaconUUID;
-		CLBeaconRegion beaconRegion, beaconRegionNotifications;
+		CLBeaconRegion beaconRegion;
 		const ushort beaconMajor = 2755;
 		const ushort beaconMinor = 1;
 		const string beaconId ="com.refractored";
 		const string uuid = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 		public UIImage Near, Far, Immediate, Unknown;
+
+		CLBeaconRegion beaconRegionNotifications;
 
 		public override void ViewDidLoad ()
 		{
@@ -44,33 +46,13 @@ namespace iBeaconsEverywhere.iOS
 			beaconUUID = new NSUuid (uuid);
 			beaconRegion = new CLBeaconRegion (beaconUUID, beaconMajor, beaconId);
 
+
 			beaconRegion.NotifyEntryStateOnDisplay = true;
 			beaconRegion.NotifyOnEntry = true;
 			beaconRegion.NotifyOnExit = true;
 
-
 			locationmanager = new CLLocationManager ();
-			locationmanager.DidRangeBeacons += (object sender, CLRegionBeaconsRangedEventArgs e) => {
-				if (e.Beacons.Length > 0) {
 
-					CLBeacon beacon = e.Beacons [0];
-
-				}
-					
-				dataSource.Beacons = e.Beacons;
-				TableView.ReloadData();
-			};
-
-
-			locationmanager.StartRangingBeacons (beaconRegion);
-
-
-			TableView.Source = dataSource = new DataSource (this);
-		}
-
-
-		#region Notified
-		/*
 			locationmanager.RegionEntered += (object sender, CLRegionEventArgs e) => {
 				if (e.Region.Identifier == beaconId) {
 
@@ -79,9 +61,35 @@ namespace iBeaconsEverywhere.iOS
 					UIApplication.SharedApplication.PresentLocationNotificationNow (notification);
 				}
 			};
-		locationmanager.StartMonitoring (beaconRegion);*/
-		#endregion
 
+
+			locationmanager.DidRangeBeacons += (object sender, CLRegionBeaconsRangedEventArgs e) => {
+				if (e.Beacons.Length > 0) {
+
+					CLBeacon beacon = e.Beacons [0];
+					//this.Title = beacon.Proximity.ToString() + " " +beacon.Major + "." + beacon.Minor;
+				}
+					
+				dataSource.Beacons = e.Beacons;
+				TableView.ReloadData();
+			};
+
+
+
+
+
+
+
+			locationmanager.StartMonitoring (beaconRegion);
+			locationmanager.StartRangingBeacons (beaconRegion);
+
+
+
+			TableView.Source = dataSource = new DataSource (this);
+		}
+
+
+	
 		class DataSource : UITableViewSource
 		{
 			static readonly NSString CellIdentifier = new NSString ("Cell");
@@ -155,6 +163,26 @@ namespace iBeaconsEverywhere.iOS
 				controller.NavigationController.PushViewController (controller.DetailViewController, true);
 			}
 		}
+
+		#region Notified
+		/*
+			beaconRegion.NotifyEntryStateOnDisplay = true;
+			beaconRegion.NotifyOnEntry = true;
+			beaconRegion.NotifyOnExit = true;
+			locationmanager.RegionEntered += (object sender, CLRegionEventArgs e) => {
+				if (e.Region.Identifier == beaconId) {
+
+					var notification = new UILocalNotification () { AlertBody = "The Xamarin beacon is close by!" };
+					UIApplication.SharedApplication.CancelAllLocalNotifications();
+					UIApplication.SharedApplication.PresentLocationNotificationNow (notification);
+				}
+			};
+		locationmanager.StartMonitoring (beaconRegion);
+
+		CLBeaconRegion beaconRegionNotifications;
+		*/
+		#endregion
+
 
 		public override void DidReceiveMemoryWarning ()
 		{

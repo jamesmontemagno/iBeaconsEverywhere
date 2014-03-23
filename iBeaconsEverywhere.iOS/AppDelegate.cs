@@ -26,6 +26,9 @@ namespace iBeaconsEverywhere.iOS
 		{
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
 
+			//Turn phone into beacon
+			//var controller = new BeaconController ();
+			//Detect Beacons
 			var controller = new MasterViewController ();
 			navigationController = new UINavigationController (controller);
 			window.RootViewController = navigationController;

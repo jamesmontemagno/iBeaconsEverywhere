@@ -39,7 +39,8 @@ namespace iBeaconsEverywhereAndroid
 			beaconManager = new BeaconManager (this);
 
 			//manually check for BLE
-			if (PackageManager.HasSystemFeature(PackageManager.FeatureBluetoothLe)) {
+			var ble = Android.Content.PM.PackageManager.FeatureBluetoothLe;
+			if (PackageManager.HasSystemFeature(ble)) {
 				Toast.MakeText(this, "BLE not supported", ToastLength.Short).Show();
 			}
 
@@ -127,7 +128,7 @@ namespace iBeaconsEverywhereAndroid
 			Intent intent = new Intent (this, typeof(DetailsActivity));
 			intent.PutExtra ("uuid", beacon.ProximityUUID);
 			intent.PutExtra ("rssi", beacon.Rssi.ToString());
-			intent.PutExtra ("accuracy", Utils.ComputeAccuracy (beacon).ToString ("P"));
+			intent.PutExtra ("accuracy", Utils.ComputeAccuracy (beacon).ToString ("F") + "m");
 			intent.PutExtra ("major", beacon.Major.ToString ());
 			intent.PutExtra ("minor", beacon.Minor.ToString ());
 			intent.PutExtra ("proximity", Utils.ComputeProximity(beacon).ToString());

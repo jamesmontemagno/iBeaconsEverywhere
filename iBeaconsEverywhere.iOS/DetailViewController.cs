@@ -38,9 +38,11 @@ namespace iBeaconsEverywhere.iOS
 			if (!IsViewLoaded || beacon == null)
 				return;
 
-			LabelAccuracy.Text = "Accuracy: " + beacon.Accuracy.ToString ("P");
+			//Estimated distance between device and beacon
+			LabelAccuracy.Text = "Accuracy: " + beacon.Accuracy.ToString("F") + "m";
 			LabelMajor.Text = "Major: " + beacon.Major.ToString ();
 			LabelMinor.Text = "Minor: " + beacon.Minor.ToString ();
+			//The measured signal strength of the Bluetooth packet that led do this iBeacon detection. (decibels)
 			LabelRSSI.Text = "RSSI: " + beacon.Rssi.ToString ();
 			LabelUUID.Text = "UUID: " + beacon.ProximityUuid.AsString ();
 

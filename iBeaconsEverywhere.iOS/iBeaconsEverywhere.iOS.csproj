@@ -128,10 +128,15 @@
     <Compile Include="DetailViewController.designer.cs">
       <DependentUpon>DetailViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="BeaconController.cs" />
+    <Compile Include="BeaconController.designer.cs">
+      <DependentUpon>BeaconController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MasterViewController.xib" />
     <InterfaceDefinition Include="DetailViewController.xib" />
+    <InterfaceDefinition Include="BeaconController.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
