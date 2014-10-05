@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBeaconsEverywhere.iOS", "i
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBeaconsEverywhere.Android", "iBeaconsEverywhere.Android\iBeaconsEverywhere.Android.csproj", "{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBeaconsEverywhere.Wear", "iBeaconsEverywhere.Wear\iBeaconsEverywhere.Wear.csproj", "{582481AB-5410-4BFA-8069-03B1D9BF4BB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -15,6 +17,18 @@ Global
 		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{582481AB-5410-4BFA-8069-03B1D9BF4BB4}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{582481AB-5410-4BFA-8069-03B1D9BF4BB4}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{582481AB-5410-4BFA-8069-03B1D9BF4BB4}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{582481AB-5410-4BFA-8069-03B1D9BF4BB4}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{582481AB-5410-4BFA-8069-03B1D9BF4BB4}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{582481AB-5410-4BFA-8069-03B1D9BF4BB4}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{582481AB-5410-4BFA-8069-03B1D9BF4BB4}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{582481AB-5410-4BFA-8069-03B1D9BF4BB4}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{582481AB-5410-4BFA-8069-03B1D9BF4BB4}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{582481AB-5410-4BFA-8069-03B1D9BF4BB4}.Release|iPhone.Build.0 = Release|Any CPU
+		{582481AB-5410-4BFA-8069-03B1D9BF4BB4}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{582481AB-5410-4BFA-8069-03B1D9BF4BB4}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{66E1563E-303E-4A1D-B999-47F6EA71D816}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
 		{66E1563E-303E-4A1D-B999-47F6EA71D816}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
 		{66E1563E-303E-4A1D-B999-47F6EA71D816}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
@@ -41,6 +55,6 @@ Global
 		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = iBeaconsEverywhere.Android\iBeaconsEverywhere.Android.csproj
+		StartupItem = iBeaconsEverywhere.Wear\iBeaconsEverywhere.Wear.csproj
 	EndGlobalSection
 EndGlobal

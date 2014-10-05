@@ -1,12 +1,23 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.James's iPhone" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="Android.AndroidL" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iBeaconsEverywhere.Wear/Properties/AndroidManifest.xml">
+    <Files>
+      <File FileName="iBeaconsEverywhere.iOS/MasterViewController.cs" Line="1" Column="1" />
+      <File FileName="iBeaconsEverywhere.Android/BeaconAdapter.cs" Line="1" Column="1" />
+      <File FileName="iBeaconsEverywhere.Android/DetailsActivity.cs" Line="1" Column="1" />
+      <File FileName="iBeaconsEverywhere.Android/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="iBeaconsEverywhere.iOS/DetailViewController.cs" Line="1" Column="1" />
+      <File FileName="iBeaconsEverywhere.Wear/MainActivity.cs" Line="3" Column="3" />
+      <File FileName="iBeaconsEverywhere.Android/Properties/AndroidManifest.xml" Line="1" Column="1" />
+      <File FileName="iBeaconsEverywhere.Wear/Properties/AndroidManifest.xml" Line="79" Column="79" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/iBeaconsEverywhere/iBeaconsEverywhere.Portable/TwilioService.cs" line="31" column="1" />
-      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/iBeaconsEverywhere/iBeaconsEverywhere.iOS/DetailViewController.cs" line="42" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.iBeaconsEverywhere.Android MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" MonoForAntroid.PreferredTheme="Theme.Holo.Light.DarkActionBar" />
+  <MonoDevelop.Ide.ItemProperties.iBeaconsEverywhere.Android MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" MonoForAntroid.PreferredTheme="Theme.Holo.Light.DarkActionBar" AndroidDeviceId-Debug="T062005D5Z" />
+  <MonoDevelop.Ide.ItemProperties.iBeaconsEverywhere.Wear MonoForAntroid.PreferredDevice="Nexus 4" AndroidDeviceId-Debug="03b71b2102a28cc8" />
 </Properties>

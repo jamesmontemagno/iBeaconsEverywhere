@@ -85,6 +85,8 @@ namespace iBeaconsEverywhereAndroid
 			#if DEBUG
 			EstimoteSdk.Utility.L.EnableDebugLogging (true);
 			#endif
+
+
 		}
 			
 		public void OnServiceReady()
