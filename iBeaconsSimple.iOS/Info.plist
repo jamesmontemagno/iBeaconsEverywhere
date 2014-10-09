@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>iBeaconsEverywhere</string>
+	<string>iBeaconsSimple.iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.refractored.ibeaconseverywhere</string>
+	<string>com.your-company.iBeaconsSimple.iOS</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -18,6 +18,8 @@
 	<array>
 		<integer>1</integer>
 	</array>
+	<key>UIMainStoryboardFile</key>
+	<string>MainStoryboard</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -28,7 +30,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysUsageDescription</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 </dict>
 </plist>

@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBeaconsEverywhere.Android"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBeaconsEverywhere.Wear", "iBeaconsEverywhere.Wear\iBeaconsEverywhere.Wear.csproj", "{582481AB-5410-4BFA-8069-03B1D9BF4BB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBeaconsSimple.iOS", "iBeaconsSimple.iOS\iBeaconsSimple.iOS.csproj", "{D3AAA4B6-610A-4C15-BA34-07AD046D5474}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBeaconsSimple.Android", "iBeaconsSimple.Android\iBeaconsSimple.Android.csproj", "{B94E4C19-8CBC-4483-AF94-0C19640D8C4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -53,6 +57,30 @@ Global
 		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.Release|iPhone.Build.0 = Release|Any CPU
 		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{8C6E45A2-7FD4-44C3-8294-6AEA4BB77B2E}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{B94E4C19-8CBC-4483-AF94-0C19640D8C4A}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{B94E4C19-8CBC-4483-AF94-0C19640D8C4A}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{B94E4C19-8CBC-4483-AF94-0C19640D8C4A}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{B94E4C19-8CBC-4483-AF94-0C19640D8C4A}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{B94E4C19-8CBC-4483-AF94-0C19640D8C4A}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{B94E4C19-8CBC-4483-AF94-0C19640D8C4A}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{B94E4C19-8CBC-4483-AF94-0C19640D8C4A}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{B94E4C19-8CBC-4483-AF94-0C19640D8C4A}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{B94E4C19-8CBC-4483-AF94-0C19640D8C4A}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{B94E4C19-8CBC-4483-AF94-0C19640D8C4A}.Release|iPhone.Build.0 = Release|Any CPU
+		{B94E4C19-8CBC-4483-AF94-0C19640D8C4A}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{B94E4C19-8CBC-4483-AF94-0C19640D8C4A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{D3AAA4B6-610A-4C15-BA34-07AD046D5474}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{D3AAA4B6-610A-4C15-BA34-07AD046D5474}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{D3AAA4B6-610A-4C15-BA34-07AD046D5474}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{D3AAA4B6-610A-4C15-BA34-07AD046D5474}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{D3AAA4B6-610A-4C15-BA34-07AD046D5474}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{D3AAA4B6-610A-4C15-BA34-07AD046D5474}.Debug|iPhone.Build.0 = Debug|iPhone
+		{D3AAA4B6-610A-4C15-BA34-07AD046D5474}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{D3AAA4B6-610A-4C15-BA34-07AD046D5474}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{D3AAA4B6-610A-4C15-BA34-07AD046D5474}.Release|iPhone.ActiveCfg = Release|iPhone
+		{D3AAA4B6-610A-4C15-BA34-07AD046D5474}.Release|iPhone.Build.0 = Release|iPhone
+		{D3AAA4B6-610A-4C15-BA34-07AD046D5474}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{D3AAA4B6-610A-4C15-BA34-07AD046D5474}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = iBeaconsEverywhere.Wear\iBeaconsEverywhere.Wear.csproj

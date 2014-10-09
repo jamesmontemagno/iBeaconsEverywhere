@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
 using MonoTouch.CoreLocation;
+using System.Linq;
 
 namespace iBeaconsEverywhere.iOS
 {
@@ -44,7 +45,7 @@ namespace iBeaconsEverywhere.iOS
 			Unknown = UIImage.FromBundle ("Images/square_unknown");
 
 			beaconUUID = new NSUuid (uuid);
-			beaconRegion = new CLBeaconRegion (beaconUUID, beaconMajor, beaconId);
+			beaconRegion = new CLBeaconRegion (beaconUUID, beaconId);
 
 
 			beaconRegion.NotifyEntryStateOnDisplay = true;
@@ -52,6 +53,7 @@ namespace iBeaconsEverywhere.iOS
 			beaconRegion.NotifyOnExit = true;
 
 			locationmanager = new CLLocationManager ();
+			locationmanager.RequestAlwaysAuthorization ();
 
 			locationmanager.RegionEntered += (object sender, CLRegionEventArgs e) => {
 				if (e.Region.Identifier == beaconId) {
@@ -64,6 +66,8 @@ namespace iBeaconsEverywhere.iOS
 
 
 			locationmanager.DidRangeBeacons += (object sender, CLRegionBeaconsRangedEventArgs e) => {
+
+
 				if (e.Beacons.Length > 0) {
 
 					CLBeacon beacon = e.Beacons [0];

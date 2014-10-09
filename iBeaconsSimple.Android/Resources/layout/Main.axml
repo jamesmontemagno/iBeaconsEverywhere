@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context=".MainActivity"
-    tools:deviceIds="wear_round"
-    android:id="@+id/main"
+    android:id="@+id/background"
     android:background="#ffffff">
     <TextView
         android:id="@+id/text"
@@ -14,6 +11,7 @@
         android:layout_height="fill_parent"
         android:gravity="center"
         android:layout_gravity="center"
-        android:textSize="70sp"
+        android:textSize="50sp"
+        android:text="@string/hello"
         android:textColor="#000000" />
 </LinearLayout>
