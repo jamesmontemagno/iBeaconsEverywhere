@@ -83,6 +83,6 @@ Global
 		{D3AAA4B6-610A-4C15-BA34-07AD046D5474}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = iBeaconsEverywhere.Wear\iBeaconsEverywhere.Wear.csproj
+		StartupItem = iBeaconsEverywhere.iOS\iBeaconsEverywhere.iOS.csproj
 	EndGlobalSection
 EndGlobal

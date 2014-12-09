@@ -36,8 +36,11 @@ namespace iBeaconsSimple.Android
 
 			//major and minor are optional, pass in null if you don't need them
 			beaconRegion = new EstimoteSdk.Region (beaconId, uuid, null, null);
+
 			var background = FindViewById<LinearLayout> (Resource.Id.background);
 			var text = FindViewById<TextView> (Resource.Id.text);
+
+
 			beaconManager.Ranging += (object sender, BeaconManager.RangingEventArgs e) => RunOnUiThread (() => {
 
 

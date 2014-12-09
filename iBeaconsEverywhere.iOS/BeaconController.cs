@@ -10,8 +10,13 @@ namespace iBeaconsEverywhere.iOS
 {
 	public partial class BeaconController : UIViewController
 	{
+		BTPeripheralDelegate peripheralDelegate;
+		CBPeripheralManager peripheralManager;
 		public BeaconController () : base ("BeaconController", null)
 		{
+			peripheralDelegate = new BTPeripheralDelegate ();
+			peripheralManager = new CBPeripheralManager (peripheralDelegate, DispatchQueue.DefaultGlobalQueue);
+
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -29,11 +34,18 @@ namespace iBeaconsEverywhere.iOS
 		const string beaconId ="com.refractored";
 		const string uuid = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
-		CBPeripheralManager peripheralMgr;
-		BTPeripheralDelegate peripheralDelegate;
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			var locationManager = new CLLocationManager ();
+			locationManager.RequestWhenInUseAuthorization ();
+		}
+
+		public override void ViewDidAppear (bool animated)
+		{
+			base.ViewDidAppear (animated);
+
+
 			beaconUUID = new NSUuid (uuid);
 			beaconRegion = new CLBeaconRegion (beaconUUID, beaconMajor, beaconMinor, beaconId);
 
@@ -42,11 +54,9 @@ namespace iBeaconsEverywhere.iOS
 			//power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
 			var power = new NSNumber (-59);
 
-			NSMutableDictionary peripheralData = beaconRegion.GetPeripheralData (power);
+			var peripheralData = beaconRegion.GetPeripheralData (power);
 			peripheralDelegate = new BTPeripheralDelegate ();
-			peripheralMgr = new CBPeripheralManager (peripheralDelegate, DispatchQueue.DefaultGlobalQueue);
-
-			peripheralMgr.StartAdvertising (peripheralData);
+			peripheralManager.StartAdvertising (peripheralData);
 		}
 
 		class BTPeripheralDelegate : CBPeripheralManagerDelegate

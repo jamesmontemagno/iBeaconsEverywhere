@@ -9,6 +9,7 @@ namespace iBeaconsSimple.iOS
 {
 	public partial class iBeaconsSimple_iOSViewController : UIViewController
 	{
+
 		public iBeaconsSimple_iOSViewController (IntPtr handle) : base (handle)
 		{
 		}
@@ -22,25 +23,23 @@ namespace iBeaconsSimple.iOS
 		}
 
 		#region View lifecycle
-
 		CLLocationManager locationmanager;
 		NSUuid beaconUUID;
 		CLBeaconRegion beaconRegion;
-		const ushort beaconMajor = 103;
-		const ushort beaconMinor = 53865;
+		const ushort beaconMajor = 62646;
+		const ushort beaconMinor = 64521;
 		const string beaconId ="com.xamarin";
 		const string uuid = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
-
+	
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
 			locationmanager = new CLLocationManager ();
-			beaconUUID = new NSUuid (uuid);
-
-			beaconRegion = new CLBeaconRegion (beaconUUID, beaconMajor, beaconMinor, beaconId);
-
 			locationmanager.RequestWhenInUseAuthorization ();
+
+			beaconUUID = new NSUuid (uuid);
+			beaconRegion = new CLBeaconRegion (beaconUUID, beaconMajor, beaconMinor, beaconId);
 
 			locationmanager.DidRangeBeacons += (sender, e) => 
 			{
@@ -48,8 +47,6 @@ namespace iBeaconsSimple.iOS
 					return;
 
 				var beacon = e.Beacons[0];
-
-
 				switch(beacon.Proximity)
 				{
 				case CLProximity.Far:
@@ -62,16 +59,13 @@ namespace iBeaconsSimple.iOS
 					View.BackgroundColor = UIColor.Green;
 					break;
 				case CLProximity.Unknown:
-					View.BackgroundColor = UIColor.LightGray;
-					break;
+					return;
 				}
 
-				LabelBeacon.Text = e.Region.Identifier;
+				LabelBeacon.Text = beacon.Accuracy.ToString();
 			};
 
-
 			locationmanager.StartRangingBeacons (beaconRegion);
-
 
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
