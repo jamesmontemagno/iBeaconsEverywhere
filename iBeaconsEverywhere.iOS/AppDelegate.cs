@@ -35,6 +35,11 @@ namespace iBeaconsEverywhere.iOS
 
 			// make the window visible
 			window.MakeKeyAndVisible ();
+
+			//Required in iOS 8 to show notifications
+			UIApplication.SharedApplication.RegisterUserNotificationSettings (
+				UIUserNotificationSettings.GetSettingsForTypes (UIUserNotificationType.Alert, null));
+
 			
 			return true;
 		}

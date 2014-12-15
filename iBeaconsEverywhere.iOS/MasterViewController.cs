@@ -28,7 +28,7 @@ namespace iBeaconsEverywhere.iOS
 		NSUuid beaconUUID;
 		CLBeaconRegion beaconRegion;
 		const ushort beaconMajor = 2755;
-		const ushort beaconMinor = 1;
+		const ushort beaconMinor = 5;
 		const string beaconId ="com.refractored";
 		const string uuid = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 		public UIImage Near, Far, Immediate, Unknown;
@@ -45,7 +45,7 @@ namespace iBeaconsEverywhere.iOS
 			Unknown = UIImage.FromBundle ("Images/square_unknown");
 
 			beaconUUID = new NSUuid (uuid);
-			beaconRegion = new CLBeaconRegion (beaconUUID, beaconId);
+			beaconRegion = new CLBeaconRegion (beaconUUID, beaconMajor, beaconMinor, beaconId);
 
 
 			beaconRegion.NotifyEntryStateOnDisplay = true;
@@ -55,13 +55,12 @@ namespace iBeaconsEverywhere.iOS
 			locationmanager = new CLLocationManager ();
 			locationmanager.RequestAlwaysAuthorization ();
 
+
 			locationmanager.RegionEntered += (object sender, CLRegionEventArgs e) => {
-				if (e.Region.Identifier == beaconId) {
 
 					var notification = new UILocalNotification () { AlertBody = "The Xamarin beacon is close by!" };
 					UIApplication.SharedApplication.CancelAllLocalNotifications();
 					UIApplication.SharedApplication.PresentLocationNotificationNow (notification);
-				}
 			};
 
 
@@ -90,6 +89,7 @@ namespace iBeaconsEverywhere.iOS
 
 
 			TableView.Source = dataSource = new DataSource (this);
+
 		}
 
 
