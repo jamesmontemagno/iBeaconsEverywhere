@@ -15,7 +15,7 @@
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
     <AssemblyName>iBeaconsEverywhere.Wear</AssemblyName>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <TargetFrameworkVersion>v4.4.87</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,14 +43,17 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-    <Reference Include="Xamarin.Android.Support.v13">
-      <HintPath>..\packages\Xamarin.Android.Support.v13.20.0.0.3\lib\MonoAndroid10\Xamarin.Android.Support.v13.dll</HintPath>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.21.0.3.0\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.21.0.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Android.Wearable">
-      <HintPath>..\packages\Xamarin.Android.Wear.1.0.0-preview7\lib\MonoAndroid10\Xamarin.Android.Wearable.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Android.Wear.1.1.0.2\lib\MonoAndroid44\Xamarin.Android.Wearable.dll</HintPath>
     </Reference>
-    <Reference Include="EstimotesBinding">
-      <HintPath>..\Components\estimotesdk-1.0.20140808\lib\android\EstimotesBinding.dll</HintPath>
+    <Reference Include="Estimotes.Xamarin.Android">
+      <HintPath>..\packages\Estimotes-Xamarin.1.0.20141223.0\lib\MonoAndroid43\Estimotes.Xamarin.Android.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -61,8 +64,8 @@
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <None Include="packages.config" />
     <None Include="Properties\AndroidManifest.xml" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -72,10 +75,4 @@
     <AndroidResource Include="Resources\drawable\Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
-  <ItemGroup>
-    <XamarinComponentReference Include="estimotesdk">
-      <Version>1.0.20140808</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
-  </ItemGroup>
 </Project>

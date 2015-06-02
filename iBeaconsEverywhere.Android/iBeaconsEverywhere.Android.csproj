@@ -44,8 +44,8 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-    <Reference Include="EstimotesBinding">
-      <HintPath>..\Components\estimotesdk-1.0.20140310\lib\android\EstimotesBinding.dll</HintPath>
+    <Reference Include="Estimotes.Xamarin.Android">
+      <HintPath>..\packages\Estimotes-Xamarin.1.0.20141223.0\lib\MonoAndroid43\Estimotes.Xamarin.Android.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +59,7 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -94,15 +95,15 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <XamarinComponentReference Include="estimotesdk">
-      <Version>1.0.20140310</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Resources\drawable-mdpi\" />
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-hdpi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="estimotesdk">
+      <Version>1.0.20141223</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
 </Project>

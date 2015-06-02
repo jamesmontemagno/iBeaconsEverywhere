@@ -6,12 +6,22 @@
     android:id="@+id/background"
     android:background="#ffffff">
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/beacons_found"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:gravity="center"
         android:layout_gravity="center"
         android:textSize="50sp"
-        android:text="@string/hello"
+        android:text="0"
+        android:textColor="#000000" />
+    <TextView
+        android:id="@+id/accuracy"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:text="0"
         android:textColor="#000000" />
 </LinearLayout>

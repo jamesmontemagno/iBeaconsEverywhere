@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 namespace iBeaconsSimple.iOS
 {
@@ -18,6 +18,15 @@ namespace iBeaconsSimple.iOS
 		public override UIWindow Window {
 			get;
 			set;
+		}
+
+		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
+		{
+			//Required in iOS 8 to show notifications
+			UIApplication.SharedApplication.RegisterUserNotificationSettings (
+				UIUserNotificationSettings.GetSettingsForTypes (UIUserNotificationType.Alert, null));
+			
+			return true;
 		}
 		
 		// This method is invoked when the application is about to move from active to inactive state.

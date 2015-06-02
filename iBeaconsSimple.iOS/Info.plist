@@ -31,6 +31,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>Scanning for some ibeacons!</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Scanning in the background.</string>
 </dict>
 </plist>

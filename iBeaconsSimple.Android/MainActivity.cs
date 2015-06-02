@@ -1,9 +1,5 @@
-﻿using System;
-
+﻿
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Android.OS;
 using EstimoteSdk;
@@ -38,18 +34,19 @@ namespace iBeaconsSimple.Android
 			beaconRegion = new EstimoteSdk.Region (beaconId, uuid, null, null);
 
 			var background = FindViewById<LinearLayout> (Resource.Id.background);
-			var text = FindViewById<TextView> (Resource.Id.text);
-
+      var beaconsFound = FindViewById<TextView> (Resource.Id.beacons_found);
+      var accuracy = FindViewById<TextView> (Resource.Id.accuracy);
 
 			beaconManager.Ranging += (object sender, BeaconManager.RangingEventArgs e) => RunOnUiThread (() => {
 
 
-				background.SetBackgroundColor(Color.Black);
-				text.Text = e.Beacons.Count.ToString();
+        background.SetBackgroundColor(Color.White);
+        beaconsFound.Text = e.Beacons.Count.ToString();
 				if(e.Beacons.Count == 0)
 					return;
 
 				var prox = Utils.ComputeProximity(e.Beacons[0]);
+
 				if(prox == Utils.Proximity.Far)
 					background.SetBackgroundColor(Color.Blue);
 				else if(prox == Utils.Proximity.Near)
@@ -58,6 +55,9 @@ namespace iBeaconsSimple.Android
 					background.SetBackgroundColor(Color.Green);
 				else
 					background.SetBackgroundColor(Color.Black);
+
+        var distance = Utils.ComputeAccuracy(e.Beacons[0]);
+        accuracy.Text = distance.ToString("##.0000000");
 
 			});
 		}

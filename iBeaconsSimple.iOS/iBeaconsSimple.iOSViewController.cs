@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Drawing;
+using CoreGraphics;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using MonoTouch.CoreLocation;
+using Foundation;
+using UIKit;
+using CoreLocation;
+using System.Linq;
 
 namespace iBeaconsSimple.iOS
 {
@@ -13,40 +14,97 @@ namespace iBeaconsSimple.iOS
 		public iBeaconsSimple_iOSViewController (IntPtr handle) : base (handle)
 		{
 		}
-
-		public override void DidReceiveMemoryWarning ()
-		{
-			// Releases the view if it doesn't have a superview.
-			base.DidReceiveMemoryWarning ();
 			
-			// Release any cached data, images, etc that aren't in use.
-		}
 
 		#region View lifecycle
 		CLLocationManager locationmanager;
 		NSUuid beaconUUID;
 		CLBeaconRegion beaconRegion;
-		const ushort beaconMajor = 62646;
-		const ushort beaconMinor = 64521;
+
 		const string beaconId ="com.xamarin";
 		const string uuid = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
+
+		const ushort beaconMajor = 107;
+		const ushort beaconMinor = 8;
 	
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
 			locationmanager = new CLLocationManager ();
-			locationmanager.RequestWhenInUseAuthorization ();
+      if(UIDevice.CurrentDevice.CheckSystemVersion(8, 0))
+        locationmanager.RequestAlwaysAuthorization ();
 
-			beaconUUID = new NSUuid (uuid);
-			beaconRegion = new CLBeaconRegion (beaconUUID, beaconMajor, beaconMinor, beaconId);
+			
+      beaconUUID = new NSUuid (uuid);
+      beaconRegion = new CLBeaconRegion (beaconUUID, 107, 8, beaconId);
+      beaconRegion.NotifyEntryStateOnDisplay = true;
+      beaconRegion.NotifyOnEntry = true;
+      beaconRegion.NotifyOnExit = true;
 
-			locationmanager.DidRangeBeacons += (sender, e) => 
-			{
-				if(e.Beacons.Length == 0)
-					return;
+      locationmanager.RegionEntered += (sender, e) => 
+      {
+        var notification = new UILocalNotification () { AlertBody = "The Xamarin beacon is close by!" };
+        UIApplication.SharedApplication.CancelAllLocalNotifications();
+        UIApplication.SharedApplication.PresentLocalNotificationNow (notification);
 
-				var beacon = e.Beacons[0];
+      };
+
+
+      locationmanager.RegionLeft += (sender, e) => 
+      {
+        var notification = new UILocalNotification () { AlertBody = "The Xamarin beacon is far!" };
+        UIApplication.SharedApplication.CancelAllLocalNotifications();
+        UIApplication.SharedApplication.PresentLocalNotificationNow (notification);
+      };
+
+			//DidRangeBeacons
+      locationmanager.DidRangeBeacons += (object sender, CLRegionBeaconsRangedEventArgs e) => 
+      {
+
+        if(e.Beacons.Length == 0)
+          return;
+        
+        var beacon = e.Beacons[0];
+
+        LabelBeacon.Text = "We found: " + e.Beacons.Length + " beacons" +  " " + beacon.Major + " " + beacon.Minor;
+        LabelDistance.Text = beacon.Accuracy.ToString("##.000") + " " + beacon.Proximity.ToString();
+
+        switch(beacon.Proximity)
+        {
+        case CLProximity.Far:
+          View.BackgroundColor = UIColor.Blue;
+          break;
+        case CLProximity.Near:
+          View.BackgroundColor = UIColor.Yellow;
+          break;
+        case CLProximity.Immediate:
+          View.BackgroundColor = UIColor.Green;
+
+          //locationmanager.StopRangingBeacons(beaconRegion);
+
+          //var vc = UIStoryboard.FromName("MainStoryboard", null).InstantiateViewController("FoundViewController");
+          //NavigationController.PushViewController(vc, true);
+          break;
+        case CLProximity.Unknown:
+          return;
+        }
+      };
+
+
+
+
+
+
+			//StartRanging
+      locationmanager.StartRangingBeacons(beaconRegion);
+      locationmanager.StartMonitoring (beaconRegion);
+		}
+
+
+
+		/* 
+		  	var beacon = e.Beacons[0];
 				switch(beacon.Proximity)
 				{
 				case CLProximity.Far:
@@ -62,33 +120,24 @@ namespace iBeaconsSimple.iOS
 					return;
 				}
 
-				LabelBeacon.Text = beacon.Accuracy.ToString();
+				LabelBeacon.Text = beacon.Major + " " + beacon.Minor;
+				LabelDistance.Text = beacon.Accuracy.ToString();
+		 */
+		 
+
+
+		//var vc = UIStoryboard.FromName("MainStoryboard", null).InstantiateViewController("found");
+		//NavigationController.PushViewController(vc, true);
+
+		/*
+		  locationmanager.RegionEntered += (object sender, CLRegionEventArgs e) => {
+
+					var notification = new UILocalNotification () { AlertBody = "The Xamarin beacon is close by!" };
+					UIApplication.SharedApplication.CancelAllLocalNotifications();
+					UIApplication.SharedApplication.PresentLocationNotificationNow (notification);
 			};
+		 */
 
-			locationmanager.StartRangingBeacons (beaconRegion);
-
-			// Perform any additional setup after loading the view, typically from a nib.
-		}
-
-		public override void ViewWillAppear (bool animated)
-		{
-			base.ViewWillAppear (animated);
-		}
-
-		public override void ViewDidAppear (bool animated)
-		{
-			base.ViewDidAppear (animated);
-		}
-
-		public override void ViewWillDisappear (bool animated)
-		{
-			base.ViewWillDisappear (animated);
-		}
-
-		public override void ViewDidDisappear (bool animated)
-		{
-			base.ViewDidDisappear (animated);
-		}
 
 		#endregion
 	}
