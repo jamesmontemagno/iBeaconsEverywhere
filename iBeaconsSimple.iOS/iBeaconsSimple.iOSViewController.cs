@@ -37,7 +37,7 @@ namespace iBeaconsSimple.iOS
 
 			
       beaconUUID = new NSUuid (uuid);
-      beaconRegion = new CLBeaconRegion (beaconUUID, 107, 8, beaconId);
+      beaconRegion = new CLBeaconRegion (beaconUUID, beaconMajor, beaconMinor, beaconId);
       beaconRegion.NotifyEntryStateOnDisplay = true;
       beaconRegion.NotifyOnEntry = true;
       beaconRegion.NotifyOnExit = true;
