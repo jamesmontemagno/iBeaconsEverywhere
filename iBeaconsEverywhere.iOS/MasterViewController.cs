@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Drawing;
+using CoreGraphics;
 using System.Collections.Generic;
-using MonoTouch.UIKit;
-using MonoTouch.Foundation;
-using MonoTouch.CoreLocation;
+using UIKit;
+using Foundation;
+using CoreLocation;
 using System.Linq;
 
 namespace iBeaconsEverywhere.iOS
@@ -60,7 +60,7 @@ namespace iBeaconsEverywhere.iOS
 
 					var notification = new UILocalNotification () { AlertBody = "The Xamarin beacon is close by!" };
 					UIApplication.SharedApplication.CancelAllLocalNotifications();
-					UIApplication.SharedApplication.PresentLocationNotificationNow (notification);
+					UIApplication.SharedApplication.PresentLocalNotificationNow (notification);
 			};
 
 
@@ -110,7 +110,7 @@ namespace iBeaconsEverywhere.iOS
 				set { beacons = value;}
 			}
 
-			public override int RowsInSection (UITableView tableview, int section)
+			public override nint RowsInSection (UITableView tableview, nint section)
 			{
 				return beacons.Length;
 			}

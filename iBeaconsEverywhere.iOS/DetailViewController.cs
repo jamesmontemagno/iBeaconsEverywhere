@@ -1,7 +1,7 @@
-﻿using System.Drawing;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using MonoTouch.CoreLocation;
+using CoreGraphics;
+using Foundation;
+using UIKit;
+using CoreLocation;
 
 namespace iBeaconsEverywhere.iOS
 {

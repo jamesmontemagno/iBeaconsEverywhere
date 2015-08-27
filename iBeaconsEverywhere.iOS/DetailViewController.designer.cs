@@ -4,7 +4,7 @@
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoTouch.Foundation;
+using Foundation;
 using System.CodeDom.Compiler;
 
 namespace iBeaconsEverywhere.iOS
@@ -13,25 +13,25 @@ namespace iBeaconsEverywhere.iOS
 	partial class DetailViewController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UIImageView ImageViewDot { get; set; }
+		UIKit.UIImageView ImageViewDot { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIImageView ImageViewEstimote { get; set; }
+		UIKit.UIImageView ImageViewEstimote { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel LabelAccuracy { get; set; }
+		UIKit.UILabel LabelAccuracy { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel LabelMajor { get; set; }
+		UIKit.UILabel LabelMajor { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel LabelMinor { get; set; }
+		UIKit.UILabel LabelMinor { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel LabelRSSI { get; set; }
+		UIKit.UILabel LabelRSSI { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel LabelUUID { get; set; }
+		UIKit.UILabel LabelUUID { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{

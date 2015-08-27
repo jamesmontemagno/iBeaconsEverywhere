@@ -1,10 +1,10 @@
-﻿using System;
-using System.Drawing;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using MonoTouch.CoreLocation;
-using MonoTouch.CoreBluetooth;
-using MonoTouch.CoreFoundation;
+using System;
+using CoreGraphics;
+using Foundation;
+using UIKit;
+using CoreLocation;
+using CoreBluetooth;
+using CoreFoundation;
 
 namespace iBeaconsEverywhere.iOS
 {
