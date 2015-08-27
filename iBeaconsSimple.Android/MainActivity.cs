@@ -7,14 +7,14 @@ using Android.Graphics;
 
 namespace iBeaconsSimple.Android
 {
-	[Activity (Label = "iBeaconsSimple.Android", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "iBeaconsSimple.Android", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = global::Android.Content.PM.ScreenOrientation.Portrait)]
 	public class MainActivity : Activity, BeaconManager.IServiceReadyCallback
 	{
 
 		private EstimoteSdk.Region beaconRegion;
 		private BeaconManager beaconManager;
 
-		const string beaconId ="com.refractored";
+		const string beaconId = "com.refractored";
 		const string uuid = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 		private bool beaconsEnabled = true;
 		int count = 1;
@@ -34,35 +34,35 @@ namespace iBeaconsSimple.Android
 			beaconRegion = new EstimoteSdk.Region (beaconId, uuid, null, null);
 
 			var background = FindViewById<LinearLayout> (Resource.Id.background);
-      var beaconsFound = FindViewById<TextView> (Resource.Id.beacons_found);
-      var accuracy = FindViewById<TextView> (Resource.Id.accuracy);
+			var beaconsFound = FindViewById<TextView> (Resource.Id.beacons_found);
+			var accuracy = FindViewById<TextView> (Resource.Id.accuracy);
 
 			beaconManager.Ranging += (object sender, BeaconManager.RangingEventArgs e) => RunOnUiThread (() => {
 
 
-        background.SetBackgroundColor(Color.White);
-        beaconsFound.Text = e.Beacons.Count.ToString();
-				if(e.Beacons.Count == 0)
+				background.SetBackgroundColor (Color.White);
+				beaconsFound.Text = e.Beacons.Count.ToString ();
+				if (e.Beacons.Count == 0)
 					return;
 
-				var prox = Utils.ComputeProximity(e.Beacons[0]);
+				var prox = Utils.ComputeProximity (e.Beacons [0]);
 
-				if(prox == Utils.Proximity.Far)
-					background.SetBackgroundColor(Color.Blue);
-				else if(prox == Utils.Proximity.Near)
-					background.SetBackgroundColor(Color.Yellow);
-				else if(prox == Utils.Proximity.Immediate)
-					background.SetBackgroundColor(Color.Green);
+				if (prox == Utils.Proximity.Far)
+					background.SetBackgroundColor (Color.Blue);
+				else if (prox == Utils.Proximity.Near)
+					background.SetBackgroundColor (Color.Yellow);
+				else if (prox == Utils.Proximity.Immediate)
+					background.SetBackgroundColor (Color.Green);
 				else
-					background.SetBackgroundColor(Color.Black);
+					background.SetBackgroundColor (Color.Black);
 
-        var distance = Utils.ComputeAccuracy(e.Beacons[0]);
-        accuracy.Text = distance.ToString("##.0000000");
+				var distance = Utils.ComputeAccuracy (e.Beacons [0]);
+				accuracy.Text = distance.ToString ("##.0000000");
 
 			});
 		}
 
-		public void OnServiceReady()
+		public void OnServiceReady ()
 		{
 			// This method is called when BeaconManager is up and running.
 
@@ -70,12 +70,12 @@ namespace iBeaconsSimple.Android
 
 		}
 
-		protected override void OnDestroy()
+		protected override void OnDestroy ()
 		{
 			// Make sure we disconnect from the Estimote.
-			base.OnDestroy();
+			base.OnDestroy ();
 
-			beaconManager.Disconnect();
+			beaconManager.Disconnect ();
 		}
 
 		protected override void OnPause ()
@@ -85,12 +85,12 @@ namespace iBeaconsSimple.Android
 			beaconManager.Disconnect ();
 		}
 
-		protected override void OnResume()
+		protected override void OnResume ()
 		{
 			//on resume and come back reconnect to manager
-			base.OnResume();
-			if(beaconsEnabled)
-				beaconManager.Connect(this);
+			base.OnResume ();
+			if (beaconsEnabled)
+				beaconManager.Connect (this);
 		}
 	}
 }

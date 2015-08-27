@@ -83,7 +83,8 @@ namespace iBeaconsEverywhereAndroid
 
 			//estimote loggin, optional
 			#if DEBUG
-			EstimoteSdk.Utility.L.EnableDebugLogging (true);
+
+            Estimote.EnableDebugLogging (true);
 			#endif
 
 

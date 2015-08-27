@@ -1,6 +1,12 @@
-﻿<Properties StartupItem="iBeaconsSimple.iOS/iBeaconsSimple.iOS.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="Android.Lollipop" />
-  <MonoDevelop.Ide.Workbench />
+﻿<Properties StartupItem="iBeaconsEverywhere.Android/iBeaconsEverywhere.Android.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="Android.Marshmallow" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iBeaconsEverywhere.Wear/MainActivity.cs">
+    <Files>
+      <File FileName="iBeaconsSimple.iOS/iBeaconsSimple.iOSViewController.cs" Line="1" Column="1" />
+      <File FileName="iBeaconsSimple.Android/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="iBeaconsEverywhere.Wear/MainActivity.cs" Line="57" Column="35" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/iBeaconsEverywhere/iBeaconsEverywhere.iOS/MasterViewController.cs" line="61" column="1" />
@@ -8,6 +14,6 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.iBeaconsSimple.Android MonoForAntroid.PreferredDevice="Nexus 4" AndroidDesignerPreferredDevice="Nexus 4" />
-  <MonoDevelop.Ide.ItemProperties.iBeaconsEverywhere.Wear MonoForAntroid.PreferredDevice="Nexus 4" AndroidDeviceId-Debug="03b71b2102a28cc8" />
+  <MonoDevelop.Ide.ItemProperties.iBeaconsEverywhere.Wear MonoForAntroid.PreferredDevice="Nexus 4" AndroidDeviceId-Debug="03b71b2102a28cc8" AndroidDesignerPreferredDevice="Nexus 4" />
   <MonoDevelop.Ide.ItemProperties.iBeaconsEverywhere.Android MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" MonoForAntroid.PreferredTheme="Theme.Holo.Light.DarkActionBar" AndroidDeviceId-Debug="T062005D5Z" />
 </Properties>

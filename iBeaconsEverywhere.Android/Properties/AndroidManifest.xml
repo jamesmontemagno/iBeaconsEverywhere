@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.refractored.ibeaconseverywhere">
-	<uses-sdk android:targetSdkVersion="19" />
+	<uses-sdk android:targetSdkVersion="21" />
 	<application android:theme="@style/MyBaseTheme" android:label="iBeacons Everywhere" android:icon="@drawable/ic_launcher">
 		<service android:name="com.estimote.sdk.service.BeaconService" android:exported="false" />
 	</application>
 	<uses-permission android:name="android.permission.BLUETOOTH" />
 	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-	<uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+	<uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
 </manifest>
