@@ -118,6 +118,9 @@ namespace iBeaconsEverywhere.Wear
 			// aapt resource value: 0x7f010000
 			public const int imageAspectRatioAdjust = 2130771968;
 			
+			// aapt resource value: 0x7f01002d
+			public const int layoutManager = 2130772013;
+			
 			// aapt resource value: 0x7f010013
 			public const int layout_box = 2130771987;
 			
@@ -130,11 +133,20 @@ namespace iBeaconsEverywhere.Wear
 			// aapt resource value: 0x7f010029
 			public const int rectLayout = 2130772009;
 			
+			// aapt resource value: 0x7f01002f
+			public const int reverseLayout = 2130772015;
+			
 			// aapt resource value: 0x7f01002a
 			public const int roundLayout = 2130772010;
 			
 			// aapt resource value: 0x7f01001a
 			public const int shadow_width = 2130771994;
+			
+			// aapt resource value: 0x7f01002e
+			public const int spanCount = 2130772014;
+			
+			// aapt resource value: 0x7f010030
+			public const int stackFromEnd = 2130772016;
 			
 			// aapt resource value: 0x7f01000a
 			public const int uiCompass = 2130771978;
@@ -285,14 +297,17 @@ namespace iBeaconsEverywhere.Wear
 		public partial class Dimension
 		{
 			
-			// aapt resource value: 0x7f080000
-			public const int card_content_padding_rect_top = 2131230720;
+			// aapt resource value: 0x7f070000
+			public const int card_content_padding_rect_top = 2131165184;
 			
-			// aapt resource value: 0x7f080001
-			public const int close_button_diameter = 2131230721;
+			// aapt resource value: 0x7f070001
+			public const int close_button_diameter = 2131165185;
 			
-			// aapt resource value: 0x7f080002
-			public const int dismiss_padding = 2131230722;
+			// aapt resource value: 0x7f070002
+			public const int dismiss_padding = 2131165186;
+			
+			// aapt resource value: 0x7f070003
+			public const int item_touch_helper_max_drag_scroll_per_frame = 2131165187;
 			
 			static Dimension()
 			{
@@ -671,83 +686,86 @@ namespace iBeaconsEverywhere.Wear
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0a000f
-			public const int action_error = 2131361807;
+			// aapt resource value: 0x7f080010
+			public const int action_error = 2131230736;
 			
-			// aapt resource value: 0x7f0a0011
-			public const int action_success = 2131361809;
+			// aapt resource value: 0x7f080012
+			public const int action_success = 2131230738;
 			
-			// aapt resource value: 0x7f0a0000
-			public const int adjust_height = 2131361792;
+			// aapt resource value: 0x7f080001
+			public const int adjust_height = 2131230721;
 			
-			// aapt resource value: 0x7f0a0001
-			public const int adjust_width = 2131361793;
+			// aapt resource value: 0x7f080002
+			public const int adjust_width = 2131230722;
 			
-			// aapt resource value: 0x7f0a0007
-			public const int all = 2131361799;
+			// aapt resource value: 0x7f080008
+			public const int all = 2131230728;
 			
-			// aapt resource value: 0x7f0a0012
-			public const int animation = 2131361810;
+			// aapt resource value: 0x7f080013
+			public const int animation = 2131230739;
 			
-			// aapt resource value: 0x7f0a0008
-			public const int bottom = 2131361800;
+			// aapt resource value: 0x7f080009
+			public const int bottom = 2131230729;
 			
-			// aapt resource value: 0x7f0a000c
-			public const int center = 2131361804;
+			// aapt resource value: 0x7f08000d
+			public const int center = 2131230733;
 			
-			// aapt resource value: 0x7f0a000d
-			public const int center_horizontal = 2131361805;
+			// aapt resource value: 0x7f08000e
+			public const int center_horizontal = 2131230734;
 			
-			// aapt resource value: 0x7f0a000e
-			public const int center_vertical = 2131361806;
+			// aapt resource value: 0x7f08000f
+			public const int center_vertical = 2131230735;
 			
-			// aapt resource value: 0x7f0a0015
-			public const int dismiss_overlay_button = 2131361813;
+			// aapt resource value: 0x7f080016
+			public const int dismiss_overlay_button = 2131230742;
 			
-			// aapt resource value: 0x7f0a0014
-			public const int dismiss_overlay_explain = 2131361812;
+			// aapt resource value: 0x7f080015
+			public const int dismiss_overlay_explain = 2131230741;
 			
-			// aapt resource value: 0x7f0a0010
-			public const int error_message = 2131361808;
+			// aapt resource value: 0x7f080011
+			public const int error_message = 2131230737;
 			
-			// aapt resource value: 0x7f0a0003
-			public const int hybrid = 2131361795;
+			// aapt resource value: 0x7f080004
+			public const int hybrid = 2131230724;
 			
-			// aapt resource value: 0x7f0a0009
-			public const int left = 2131361801;
+			// aapt resource value: 0x7f080000
+			public const int item_touch_helper_previous_elevation = 2131230720;
 			
-			// aapt resource value: 0x7f0a0017
-			public const int main = 2131361815;
+			// aapt resource value: 0x7f08000a
+			public const int left = 2131230730;
 			
-			// aapt resource value: 0x7f0a0013
-			public const int message = 2131361811;
+			// aapt resource value: 0x7f080018
+			public const int main = 2131230744;
 			
-			// aapt resource value: 0x7f0a0002
-			public const int none = 2131361794;
+			// aapt resource value: 0x7f080014
+			public const int message = 2131230740;
 			
-			// aapt resource value: 0x7f0a0004
-			public const int normal = 2131361796;
+			// aapt resource value: 0x7f080003
+			public const int none = 2131230723;
 			
-			// aapt resource value: 0x7f0a000a
-			public const int right = 2131361802;
+			// aapt resource value: 0x7f080005
+			public const int normal = 2131230725;
 			
-			// aapt resource value: 0x7f0a0005
-			public const int satellite = 2131361797;
+			// aapt resource value: 0x7f08000b
+			public const int right = 2131230731;
 			
-			// aapt resource value: 0x7f0a0006
-			public const int terrain = 2131361798;
+			// aapt resource value: 0x7f080006
+			public const int satellite = 2131230726;
 			
-			// aapt resource value: 0x7f0a0018
-			public const int text = 2131361816;
+			// aapt resource value: 0x7f080007
+			public const int terrain = 2131230727;
 			
-			// aapt resource value: 0x7f0a0019
-			public const int title = 2131361817;
+			// aapt resource value: 0x7f080019
+			public const int text = 2131230745;
 			
-			// aapt resource value: 0x7f0a000b
-			public const int top = 2131361803;
+			// aapt resource value: 0x7f08001a
+			public const int title = 2131230746;
 			
-			// aapt resource value: 0x7f0a0016
-			public const int watch_view_stub = 2131361814;
+			// aapt resource value: 0x7f08000c
+			public const int top = 2131230732;
+			
+			// aapt resource value: 0x7f080017
+			public const int watch_view_stub = 2131230743;
 			
 			static Id()
 			{
@@ -762,8 +780,8 @@ namespace iBeaconsEverywhere.Wear
 		public partial class Integer
 		{
 			
-			// aapt resource value: 0x7f070000
-			public const int google_play_services_version = 2131165184;
+			// aapt resource value: 0x7f0a0000
+			public const int google_play_services_version = 2131361792;
 			
 			static Integer()
 			{
@@ -1174,6 +1192,29 @@ namespace iBeaconsEverywhere.Wear
 			
 			// aapt resource value: 14
 			public const int MapAttrs_zOrderOnTop = 14;
+			
+			public static int[] RecyclerView = new int[]
+			{
+					16842948,
+					2130772013,
+					2130772014,
+					2130772015,
+					2130772016};
+			
+			// aapt resource value: 0
+			public const int RecyclerView_android_orientation = 0;
+			
+			// aapt resource value: 1
+			public const int RecyclerView_layoutManager = 1;
+			
+			// aapt resource value: 3
+			public const int RecyclerView_reverseLayout = 3;
+			
+			// aapt resource value: 2
+			public const int RecyclerView_spanCount = 2;
+			
+			// aapt resource value: 4
+			public const int RecyclerView_stackFromEnd = 4;
 			
 			public static int[] WatchViewStub = new int[]
 			{

@@ -60,7 +60,7 @@ namespace iBeaconsEverywhereAndroid
 			}
 
 			//major and minor are optional, pass in null if you don't need them
-			beaconRegion = new Region (beaconId, uuid, major, null);
+			beaconRegion = new Region (beaconId, uuid, null, null);
 
 
 			//Event for when ranging happens
